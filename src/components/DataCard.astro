@@ -1,0 +1,106 @@
+<div class="card">
+    <p>You’ve used <span>815 GB</span> of your storage</p>
+    <div class="rangeContainer">
+        <span class="ball"></span>
+        <p class="start">0 GB</p>
+        <p class="end">1000 GB</p>
+    </div>
+    <div class="left-container flex">
+        <p>185</p>
+        <span>GB LEFT</span>
+    </div>
+</div>
+
+<style>
+    .card {
+        background-color: var(--dark-blue-clr);
+        padding: 2rem;
+        border-radius: 10px;
+        color: var(--blue-clr);
+        padding-bottom: 5rem;
+        position: relative;
+    }
+
+    span {
+        font-weight: 700;
+    }
+
+    .rangeContainer {
+        margin-top: 0.5rem;
+        width: 100%;
+        height: 20px;
+        background-color: var(--very-dark-blue);
+        border-radius: 15px;
+        position: relative;
+    }
+
+    .rangeContainer::after {
+        background: linear-gradient(
+            to right,
+            hsl(6, 100%, 80%),
+            hsl(335, 100%, 65%)
+        );
+        content: '';
+        position: absolute;
+        width: 80%;
+        height: 80%;
+        top: 0;
+        bottom: 0;
+        margin-block: auto;
+        left: 3px;
+        right: 10px;
+        border-radius: 15px;
+        z-index: 1;
+    }
+
+    .ball {
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        top: 0;
+        bottom: 0;
+        margin-block: auto;
+        left: 76%;
+        background-color: white;
+        border-radius: 50%;
+        z-index: 2;
+    }
+
+    .start,
+    .end {
+        position: absolute;
+        bottom: -25px;
+        font-weight: 700;
+    }
+
+    .start {
+        left: 0;
+    }
+
+    .end {
+        right: 0;
+    }
+
+    .left-container {
+        position: absolute;
+        bottom: -32px;
+        left: 0;
+        right: 0;
+        margin-inline: auto;
+        width: fit-content;
+        padding-inline: 1.5rem;
+        background: white;
+        align-items: center;
+        border-radius: 10px;
+    }
+    .left-container p {
+        font-size: 3rem;
+        font-weight: 700;
+        color: black;
+    }
+
+    .left-container span {
+        font-size: 15px;
+        color: var(--gray);
+    }
+</style>

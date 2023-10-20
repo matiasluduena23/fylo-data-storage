@@ -1,0 +1,29 @@
+---
+import FyloCard from '../components/FyloCard.astro';
+import DataCard from '../components/DataCard.astro';
+import '../style/global.css';
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>Fylo data storage</title>
+    </head>
+    <body>
+        <main>
+            <FyloCard />
+            <DataCard />
+        </main>
+
+        <style>
+            main {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+        </style>
+    </body>
+</html>

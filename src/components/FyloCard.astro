@@ -1,0 +1,30 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../assets/logo.svg';
+import iconFolder from '../assets/icon-folder.svg';
+import iconDocument from '../assets/icon-document.svg';
+import iconUpload from '../assets/icon-upload.svg';
+import Icon from './Icon.astro';
+---
+
+<div class="card">
+    <Image src={logo} alt="logo icon" />
+    <div class="icons flex">
+        <Icon iconSrc={iconDocument} />
+        <Icon iconSrc={iconFolder} />
+        <Icon iconSrc={iconUpload} />
+    </div>
+</div>
+
+<style>
+    .card {
+        background-color: var(--dark-blue-clr);
+        padding: 3rem;
+        border-radius: 10px;
+        border-top-right-radius: 100px;
+    }
+
+    .icons {
+        margin-top: 2rem;
+    }
+</style>
