@@ -18,11 +18,26 @@ import '../style/global.css';
             <DataCard />
         </main>
 
-        <style>
+        <style is:global>
             main {
                 display: flex;
                 flex-direction: column;
+
                 gap: 1rem;
+            }
+
+            @media (min-width: 768px) {
+                main {
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: end;
+                    position: relative;
+                    gap: 2rem;
+                }
+
+                main > * {
+                    flex: 1;
+                }
             }
         </style>
     </body>

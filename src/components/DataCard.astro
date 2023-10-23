@@ -19,6 +19,7 @@
         color: var(--blue-clr);
         padding-bottom: 5rem;
         position: relative;
+        max-width: 480px;
     }
 
     span {
@@ -42,7 +43,7 @@
         );
         content: '';
         position: absolute;
-        width: 80%;
+        width: 0%;
         height: 80%;
         top: 0;
         bottom: 0;
@@ -51,6 +52,16 @@
         right: 10px;
         border-radius: 15px;
         z-index: 1;
+        animation: animate1 1000ms 1 forwards 1000ms;
+    }
+
+    @keyframes animate1 {
+        from {
+            width: 0%;
+        }
+        to {
+            width: 80%;
+        }
     }
 
     .ball {
@@ -60,10 +71,20 @@
         top: 0;
         bottom: 0;
         margin-block: auto;
-        left: 76%;
+        left: 0;
         background-color: white;
         border-radius: 50%;
         z-index: 2;
+        animation: amnimateBall 1000ms 1 forwards 1000ms;
+    }
+
+    @keyframes amnimateBall {
+        from {
+            left: 0%;
+        }
+        to {
+            left: 76.7%;
+        }
     }
 
     .start,
@@ -102,5 +123,26 @@
     .left-container span {
         font-size: 15px;
         color: var(--gray);
+    }
+
+    @media (min-width: 992px) {
+        .left-container {
+            top: -50px;
+            right: 8%;
+            left: auto;
+            bottom: auto;
+        }
+
+        .left-container::before {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            right: 0;
+            width: 0px;
+            height: 0px;
+            border-style: solid;
+            border-width: 16px 17px 16px 0;
+            border-color: transparent white transparent;
+        }
     }
 </style>
